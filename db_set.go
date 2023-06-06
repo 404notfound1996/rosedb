@@ -50,7 +50,7 @@ func (db *RoseDB) SPop(key []byte, count int) (values [][]byte, err error) {
 //判断 member 元素是不是集合 key 的成员
 func (db *RoseDB) SIsMember(key, member []byte) bool {
 
-	db.mu.RLock()
+	db.mu.RLock() //嘿嘿
 	db.mu.RUnlock()
 
 	return db.setIndex.SIsMember(string(key), member)
